@@ -4,25 +4,9 @@
 
 Enhance your productivity by managing your tasks directly from the terminal and integrating them into your prompt using the [Starship prompt](https://starship.rs/). This script allows you to add, list, and manage to-do items seamlessly while providing an option to display them in your terminal prompt.
 
-
-## Origin of the Name
-
-**iZiDo** is a playful twist on the phrase **"Easy Do"**, reflecting the application's core mission to simplify task management directly from your terminal. The name embodies the ease and efficiency that iZiDo brings to your daily workflow, making task tracking an effortless part of your coding environment.
-
-### **Dialect and Slang Origins**
-
-The term **"Izi"** is a colloquial contraction of **"easy"** commonly found in various English dialects and informal speech. By adopting this slang variation, **iZiDo** conveys a sense of casual simplicity and approachability, inviting users to integrate task management seamlessly without disrupting their coding flow.
-
-- **"Izi"**: Represents the ease of managing tasks.
-- **"Do"**: Emphasizes action and productivity.
-
-Together, **iZiDo** suggests that handling to-dos can be both straightforward and effective, aligning with the application's goal to inspire and streamline your development process.
-
 ## Table of Contents
 
 - [iZiDo is a Terminal To-Do App with Starship Prompt Integration](#izido-is-a-terminal-to-do-app-with-starship-prompt-integration)
-  - [Origin of the Name](#origin-of-the-name)
-    - [**Dialect and Slang Origins**](#dialect-and-slang-origins)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Demo](#demo)
@@ -44,6 +28,8 @@ Together, **iZiDo** suggests that handling to-dos can be both straightforward an
     - [Adjusting the Script](#adjusting-the-script)
     - [Modifying the Prompt Display](#modifying-the-prompt-display)
   - [Troubleshooting](#troubleshooting)
+  - [Origin of the Name](#origin-of-the-name)
+    - [**Dialect and Slang Origins**](#dialect-and-slang-origins)
   - [License](#license)
   - [Contributing](#contributing)
 
@@ -225,6 +211,20 @@ Customize how tasks are displayed in your prompt by editing the `starship.toml` 
 - **Conflicting Aliases or Functions**: Check for existing aliases or functions named `izido` using `type izido`.
 
 ---
+
+## Origin of the Name
+
+**iZiDo** is a playful twist on the phrase **"Easy Do"**, reflecting the application's core mission to simplify task management directly from your terminal. The name embodies the ease and efficiency that iZiDo brings to your daily workflow, making task tracking an effortless part of your coding environment.
+
+### **Dialect and Slang Origins**
+
+The term **"Izi"** is a colloquial contraction of **"easy"** commonly found in various English dialects and informal speech. By adopting this slang variation, **iZiDo** conveys a sense of casual simplicity and approachability, inviting users to integrate task management seamlessly without disrupting their coding flow.
+
+- **"Izi"**: Represents the ease of managing tasks.
+- **"Do"**: Emphasizes action and productivity.
+
+Together, **iZiDo** suggests that handling to-dos can be both straightforward and effective, aligning with the application's goal to inspire and streamline your development process.
+
 
 ## License
 
