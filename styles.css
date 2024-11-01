@@ -1,0 +1,338 @@
+/* styles.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inconsolata', sans-serif;
+    line-height: 1.6;
+    background-color: #1e1e2f;
+    color: #eaeaea;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+/* Header Styling */
+header {
+    position: relative;
+    background: url('./images/danger-the-dog.jpg') center center/cover no-repeat;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+/* Overlay Styling */
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(30 30 47 / 74%);
+    z-index: 1;
+}
+
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Title Styling */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+/* Subtitle Styling */
+header .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #FFD60A;
+}
+
+/* Description Styling */
+header .description {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header .subtitle {
+        font-size: 1.2rem;
+    }
+
+    header .description {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Navigation Bar Styling */
+nav {
+    background: #111;
+    padding: 1rem 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #34C759;
+}
+
+/* Section Styling */
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #34C759;
+    display: inline-block;
+}
+
+section h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    /* color: #34C759; */
+}
+
+section ul, section ol {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+section ul li, section ol li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+section ul li strong, section ol li strong {
+    color: #FFD60A;
+}
+
+.starship {
+    color: #FFD60A;
+    text-decoration: underline;
+}
+
+code {
+    background-color: #2e2e3e;
+    color: #34C759;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}
+
+/* Code Block Styling */
+.code-block {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.code-block pre {
+    background: #2e2e3e;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.copy-btn:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background: #34C759;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: #eaeaea;
+    transition: fill 0.3s ease;
+}
+
+.copy-btn:hover svg {
+    fill: #FFD60A;
+}
+
+/* Demo Image Styling */
+#demo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    background: #0A84FF;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #FFD60A;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header .subtitle {
+        font-size: 1.2rem;
+    }
+
+    header .tagline {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    section h3 {
+        font-size: 1.5rem;
+    }
+
+    section ul, section ol {
+        margin-left: 1.5rem;
+    }
+}
+
+/* Accessibility Enhancements */
+a:focus, button:focus {
+    outline: 2px dashed #FFD60A;
+    outline-offset: 4px;
+}
+
+
+/* Beyond Coding Section */
+#beyond-coding {
+    background-color: #2e2e3e;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#beyond-coding .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#beyond-coding h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #34C759;
+    display: inline-block;
+}
+
+#beyond-coding .dog-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#beyond-coding p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#beyond-coding .dog-photo {
+    transition: transform 0.3s ease;
+}
+
+#beyond-coding .dog-photo:hover {
+    transform: scale(1.05);
+}

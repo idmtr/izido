@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iZiDo - StarShip it Today</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon (Optional) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="overlay"></div>
+        <div class="container">
+            <h1>iZiDo</h1>
+            <p class="subtitle">StarShip it Today</p>
+            <!-- <p class="tagline">StarShip it Today</p> -->
+            <p class="description">To-do list manager with seamless integration into your terminal workflow.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#demo">Demo View</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#customization">Customization</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Features Section -->
+        <section id="features">
+            <div class="container">
+                <h2>Features</h2>
+                <ul>
+                    <li><strong>Add Tasks:</strong> Easily add new tasks with optional priority levels and due dates.
+                    </li>
+                    <li><strong>List Tasks:</strong> View all your pending and completed tasks with clear formatting.
+                    </li>
+                    <li><strong>Manage Tasks:</strong> Mark tasks as done, remove them, or clear all tasks effortlessly.
+                    </li>
+                    <li><strong>Prompt Integration:</strong> Display your to-do list directly in your <a
+                            class="starship" href="https://starship.rs/" target="_blank"
+                            rel="noopener noreferrer">terminal prompt using Starship</a>.</li>
+                    <li><strong>Toggle View:</strong> Enable or disable the to-do view in your prompt to minimize
+                        distractions.</li>
+                    <li><strong>Color-Coded Output:</strong> Enhanced readability with color-coded statuses and
+                        priorities.</li>
+                    <li><strong>Accessible Everywhere:</strong> Use the <code>izido</code> command from any directory in
+                        your terminal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo">
+            <div class="container">
+                <h2>Demo View</h2>
+                <picture>
+                    <source srcset="./images/izido-in-action.webp" type="image/webp">
+                    <img src="./images/izido-in-action.jpg" alt="iZiDo in Action" loading="lazy">
+                </picture>
+                <p>Experience the sleek integration of iZiDo with your terminal prompt.</p>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <div class="container">
+                <h2>Installation</h2>
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li><strong>Shell:</strong> Bash or Zsh.</li>
+                    <li><strong>Starship Prompt:</strong> Installed and configured.</li>
+                    <li><strong>Utilities:</strong> Awk and Sed.</li>
+                    <li><strong>Terminal Emulator:</strong> Supports Unicode and colors.</li>
+                </ul>
+
+                <h3>Steps</h3>
+                <ol>
+                    <li><strong>Clone the Repository:</strong>
+                        <div class="code-block">
+                            <pre><code>git clone https://github.com/idmtr/izido.git</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>cd izido</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li><strong>Install the Script:</strong>
+                        <div class="code-block">
+                            <pre><code>sudo cp izido.sh /usr/local/bin/izido</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>sudo chmod +x /usr/local/bin/izido</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li><strong>Configure Starship Prompt:</strong>
+                        <div class="code-block">
+                            <pre><code>cat starship.toml >> ~/.config/starship.toml</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li><strong>Reload Your Shell:</strong>
+                        <div class="code-block">
+                            <pre><code>source ~/.zshrc   # For Zsh</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>source ~/.bashrc  # For Bash</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                                <!-- SVG Copy Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                                    <path
+                                        d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Usage Section -->
+        <section id="usage">
+            <div class="container">
+                <h2>Usage</h2>
+
+                <h3>Add a To-Do Item</h3>
+                <div class="code-block">
+                    <pre><code>izido add -p high -d 2024-11-01 "Go to dentist"</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+                <p><strong>Priority Options:</strong> <code>high</code>, <code>normal</code>, <code>low</code> (default
+                    is <code>normal</code>).</p>
+                <p><strong>Due Date Format:</strong> <code>YYYY-MM-DD</code>. If omitted, the due date is unspecified.
+                </p>
+
+                <h3>List To-Do Items</h3>
+                <div class="code-block">
+                    <pre><code>izido list</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="code-block">
+                    <pre><code>izido list pending    # List pending tasks</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="code-block">
+                    <pre><code>izido list high       # List high-priority tasks</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <h3>Marking a Task as Done</h3>
+                <div class="code-block">
+                    <pre><code>izido done 1</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <h3>Removing a To-Do Item</h3>
+                <div class="code-block">
+                    <pre><code>izido remove 2</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <h3>Clearing All To-Do Items</h3>
+                <div class="code-block">
+                    <pre><code>izido clear</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <h3>Toggling To-Do View in Prompt</h3>
+                <div class="code-block">
+                    <pre><code>izido view on</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="code-block">
+                    <pre><code>izido view off</code></pre>
+                    <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customization Section -->
+        <section id="customization">
+            <div class="container">
+                <h2>Customization</h2>
+
+                <h3>Adjusting the Script</h3>
+                <p>Modify the <code>izido.sh</code> script to better suit your workflow:</p>
+                <ul>
+                    <li><strong>Change Data Storage Format:</strong> Switch to JSON or another format if preferred.</li>
+                    <li><strong>Add Features:</strong> Implement task editing, notifications, or integrations with other
+                        tools.</li>
+                </ul>
+
+                <h3>Modifying the Prompt Display</h3>
+                <p>Customize how tasks are displayed in your prompt by editing the <code>starship.toml</code>
+                    configuration:</p>
+                <ul>
+                    <li><strong>Change Icons:</strong> Replace Unicode icons with your preferred symbols.</li>
+                    <li><strong>Adjust Colors:</strong> Modify color codes to match your terminal theme.</li>
+                    <li><strong>Limit Task Display:</strong> Change the number of tasks shown in the prompt.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contributing Section -->
+        <section id="contributing">
+            <div class="container">
+                <h2>Contributing</h2>
+                <p>Contributions are welcome! Follow these steps to contribute:</p>
+                <ol>
+                    <li><strong>Fork the Repository</strong></li>
+                    <li><strong>Create a New Branch</strong>
+                         <div class="code-block">
+                            <pre><code>git checkout -b feature/YourFeatureName</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                        </div>
+                    </li>
+                    <li><strong>Commit Your Changes</strong>
+                         <div class="code-block">
+                            <pre><code>git commit -m "Add feature: YourFeatureName"</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                        </div>
+                    </li>
+                    <li><strong>Push to Your Fork</strong>
+                         <div class="code-block">
+                            <pre><code>git push origin feature/YourFeatureName</code></pre>
+                            <button class="copy-btn" aria-label="Copy code" data-tooltip="Copy to clipboard">
+                        <!-- SVG Copy Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#eaeaea" viewBox="0 0 16 16">
+                            <path
+                                d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z" />
+                        </svg>
+                    </button>
+                        </div>
+                    </li>
+                    <li><strong>Open a Pull Request</strong> detailing your changes and their benefits.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Beyond Coding Section -->
+        <section id="beyond-coding">
+            <div class="container">
+                <h2>Beyond Coding</h2>
+                <img src="./images/danger-the-dog.jpg" alt="My Dog" class="dog-photo">
+                <p>Yes, iZiDo even helps me take my dog for walks! With streamlined task management, I have more time to enjoy
+                    walks with my furry friend.</p>
+            </div>
+        </section>
+
+        <!-- Origin of the Name Section -->
+        <section id="origin">
+            <div class="container">
+                <h2>Origin of the Name</h2>
+                <p><strong>iZiDo</strong> is a playful twist on the phrase <strong>"Easy Do"</strong>, reflecting the
+                    application's core mission to simplify task management directly from your terminal. The name
+                    embodies the ease and efficiency that iZiDo brings to your daily workflow, making task tracking an
+                    effortless part of your coding environment.</p>
+
+                <h3>Dialect and Slang Origins</h3>
+                <p>The term <strong>"iZi"</strong> is a colloquial contraction of <strong>"easy"</strong> commonly found
+                    in various English dialects and informal speech. By adopting this slang variation,
+                    <strong>iZiDo</strong> conveys a sense of casual simplicity and approachability, inviting users to
+                    integrate task management seamlessly without disrupting their coding flow.
+                </p>
+
+                <ul>
+                    <li><strong>"iZi"</strong>: Represents the ease of managing tasks.</li>
+                    <li><strong>"Do"</strong>: Emphasizes action and productivity.</li>
+                </ul>
+
+                <p>Together, <strong>iZiDo</strong> suggests that handling to-dos can be both straightforward and
+                    effective, aligning with the application's goal to help you get stuff done.
+                </p>
+            </div>
+        </section>
+
+        <!-- License Section -->
+        <section id="license">
+            <div class="container">
+                <h2>License</h2>
+                <p>This project is licensed under the <a href="https://mit-license.org/" target="_blank"
+                        rel="noopener noreferrer">MIT License</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 <strong>iZiDo - StarShip it Today</strong>. All rights reserved.</p>
+            <p>Created by <a href="https://github.com/idmtr" target="_blank" rel="noopener noreferrer">IDMTR</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Copy Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const code = button.parentElement.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        // Change icon to indicate success (Checkmark)
+                        const svg = button.querySelector('svg');
+                        svg.innerHTML = `
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708L6.707 11l-3.5-3.5a.5.5 0 1 1 .708-.708L6.707 9.293l6.146-6.147a.5.5 0 0 1 .708 0z"/>
+                        `;
+                        // Revert back after 2 seconds
+                        setTimeout(() => {
+                            svg.innerHTML = `
+                                <path d="M10 1.5A1.5 1.5 0 0 1 11.5 3v1h1A1.5 1.5 0 0 1 14 5.5v9A1.5 1.5 0 0 1 12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-9A1.5 1.5 0 0 1 3.5 4h1V3A1.5 1.5 0 0 1 6 1.5h4zm1 2.5v1h-4v-1h4zm-4 2v7h7v-7H7z"/>
+                            `;
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
