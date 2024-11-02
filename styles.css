@@ -113,6 +113,12 @@ nav {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a svg{
+    width: 23px;
 }
 
 .nav-links a:hover {
