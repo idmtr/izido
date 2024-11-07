@@ -57,8 +57,17 @@ header .container {
 /* Header Title Styling */
 header h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
     letter-spacing: 2px;
+}
+
+header img {
+    width: 100px;
+    object-fit: cover;
+}
+header span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Subtitle Styling */
@@ -102,6 +111,7 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .nav-links li {
@@ -114,7 +124,6 @@ nav {
     font-weight: 500;
     transition: color 0.3s ease;
     display: flex;
-    align-items: center;
 }
 
 .nav-links a svg{
